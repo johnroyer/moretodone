@@ -1,11 +1,11 @@
 services:
   app:
-    working_dir: /workspaces/mastodon/
+    working_dir: /workspaces/${localWorkspaceFolderBasename}
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ..:/workspaces/mastodon:cached
+      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
     environment:
       RAILS_ENV: development
       NODE_ENV: development
